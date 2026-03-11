@@ -1,0 +1,54 @@
+1) create EC2
+
+2) open below ports
+        8000 (uvicorn)
+        8080 (jenkins)
+        80 (Docker)
+
+3) create "Elastic IP" and 
+   allot Elastic IP to EC2
+
+4) connect to EC2
+        sudo apt update -y
+
+5) install jenkins
+    https://www.jenkins.io/doc/book/installing/linux/
+
+6) install Docker
+    sudo apt install docker.io -y
+    docker --version
+
+7) enable permissions between
+    docker and jenkins
+    docker ubuntu
+    jenkins ubuntu
+
+    sudo usermod -aG docker jenkins
+    sudo usermod -aG docker ubuntu
+    sudo usermod -aG jenkins ubuntu
+
+    sudo systemctl restart jenkins
+    sudo systemctl status jenkins
+
+8) create .env file in EC2
+    mkdir fastapi
+    cd fastapi
+    nano .env
+    
+    MONGO_URL=mongodb+srv://admin:admin@careerit.uqkohdy.mongodb.net/?appName=CareerIT
+    SECRET_KEY=mysecretepranatapplication123
+    ALGORITHM=HS256
+    ACCESS_TOKEN_EXPIRE_MINUTES=30
+    EMAIL_USER=pranatbharti11b.jssp@gmail.com
+    EMAIL_PASS=ayvo efyb jluv sopr
+
+    CTLX + X
+    ENTER
+    CTRL + Y
+
+9) push code to GitHub
+    .gitignore
+
+        venv
+        __pycache__
+        .env
