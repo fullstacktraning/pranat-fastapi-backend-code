@@ -58,3 +58,6 @@
 11) create Jenkinsfile
 
 12) push modified code to GitHub
+
+13) connect to Jenkins & create Pipeline
+    
